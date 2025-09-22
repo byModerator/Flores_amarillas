@@ -1,0 +1,355 @@
+/* Usando el CSS original que funciona y mejorando solo el diseño visual */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff8dc 0%, #f5deb3 25%, #daa520 50%, #f5deb3 75%, #fff8dc 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  font-family: "Georgia", serif;
+  overflow-x: hidden;
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.container {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  max-width: 90%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Mejorando tipografía manteniendo el color original */
+h1 {
+  font-size: clamp(24px, 5vw, 42px);
+  color: #8b4513;
+  margin: 20px 0;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  line-height: 1.3;
+}
+
+/* Agregando flor estática hermosa en la esquina */
+.static-flower {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 80px;
+  height: 80px;
+  z-index: 1;
+  opacity: 0.8;
+  animation: gentleFloat 6s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes gentleFloat {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(5deg);
+  }
+}
+
+.sp1 {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+.sp2 {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.sp3 {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.sp4 {
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+.sp5 {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+.sp6 {
+  transform: translate(-50%, -50%) rotate(225deg);
+}
+.sp7 {
+  transform: translate(-50%, -50%) rotate(270deg);
+}
+.sp8 {
+  transform: translate(-50%, -50%) rotate(315deg);
+}
+
+.static-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #8b4513, #654321);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Añadiendo estilos para la flor hermosa debajo del texto */
+.bottom-flower {
+  margin: 30px auto;
+  width: 120px;
+  height: 120px;
+  position: relative;
+  animation: gentleRotate 12s linear infinite;
+  filter: drop-shadow(0 8px 16px rgba(255, 215, 0, 0.4));
+}
+
+.bottom-flower::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes gentleRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bottom-petal {
+  width: 35px;
+  height: 70px;
+  background: linear-gradient(45deg, #ffd700 0%, #ffed4e 30%, #ffa500 60%, #ff8c00 100%);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 100%;
+  box-shadow: inset 0 4px 8px rgba(255, 255, 255, 0.5), inset 0 -2px 4px rgba(255, 140, 0, 0.3), 0 3px 12px
+    rgba(255, 215, 0, 0.3);
+  border: 1px solid rgba(255, 215, 0, 0.6);
+}
+
+/* Mejorando posicionamiento de pétalos de la flor hermosa */
+.bp1 {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+.bp2 {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.bp3 {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.bp4 {
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+.bp5 {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+.bp6 {
+  transform: translate(-50%, -50%) rotate(225deg);
+}
+.bp7 {
+  transform: translate(-50%, -50%) rotate(270deg);
+}
+.bp8 {
+  transform: translate(-50%, -50%) rotate(315deg);
+}
+
+/* Adding flower arrangement layout for mobile */
+.flower-arrangement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 30px auto;
+  flex-wrap: wrap;
+}
+
+/* Adding flower bouquet styles */
+.flower-bouquet {
+  position: relative;
+  width: 100px;
+  height: 140px;
+  filter: drop-shadow(0 8px 16px rgba(255, 215, 0, 0.4));
+  /* Removed animation: gentleSway */
+}
+
+.bouquet-stem {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 60px;
+  background: linear-gradient(to bottom, #228b22, #006400);
+  border-radius: 3px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.bouquet-flower {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+}
+
+.bouquet-flower-1 {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Removed animation: flowerBob1 */
+}
+
+.bouquet-flower-2 {
+  top: 25px;
+  left: 20px;
+  /* Removed animation: flowerBob2 */
+}
+
+.bouquet-flower-3 {
+  top: 25px;
+  right: 20px;
+  /* Removed animation: flowerBob3 */
+}
+
+.bouquet-petal {
+  width: 12px;
+  height: 20px;
+  background: linear-gradient(45deg, #ffd700 0%, #ffed4e 30%, #ffa500 60%, #ff8c00 100%);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 100%;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.5), inset 0 -1px 2px rgba(255, 140, 0, 0.3), 0 2px 6px
+    rgba(255, 215, 0, 0.3);
+  border: 1px solid rgba(255, 215, 0, 0.6);
+}
+
+.bouquet-petal.bp1 {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+.bouquet-petal.bp2 {
+  transform: translate(-50%, -50%) rotate(60deg);
+}
+.bouquet-petal.bp3 {
+  transform: translate(-50%, -50%) rotate(120deg);
+}
+.bouquet-petal.bp4 {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+.bouquet-petal.bp5 {
+  transform: translate(-50%, -50%) rotate(240deg);
+}
+.bouquet-petal.bp6 {
+  transform: translate(-50%, -50%) rotate(300deg);
+}
+
+
+
+.bouquet-leaves {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.leaf {
+  position: absolute;
+  width: 15px;
+  height: 25px;
+  background: linear-gradient(45deg, #228b22, #32cd32);
+  border-radius: 0 100% 0 100%;
+  transform-origin: bottom center;
+}
+
+.leaf-1 {
+  left: -20px;
+  transform: rotate(-30deg);
+  /* Removed animation: leafSway1 */
+}
+
+.leaf-2 {
+  left: -5px;
+  transform: rotate(0deg);
+  /* Removed animation: leafSway2 */
+}
+
+.leaf-3 {
+  left: 10px;
+  transform: rotate(30deg);
+  /* Removed animation: leafSway3 */
+}
+
+/* Adding specific styles for left and right bouquets */
+.left-bouquet {
+  transform: rotate(-5deg);
+}
+
+.right-bouquet {
+  transform: rotate(5deg);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 480px) {
+  .flower-arrangement {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .flower-bouquet {
+    width: 80px;
+    height: 120px;
+  }
+
+  .bottom-flower {
+    width: 100px;
+    height: 100px;
+    order: 2; /* Center flower in middle on mobile */
+  }
+
+  .left-bouquet {
+    order: 1;
+    transform: rotate(-3deg);
+  }
+
+  .right-bouquet {
+    order: 3;
+    transform: rotate(3deg);
+  }
+}
